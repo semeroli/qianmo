@@ -3,458 +3,596 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>《时间简史》十大宇宙奥秘</title>
+    <title>泰坦尼克号：永恒航程</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
         
         body {
-            font-family: 'Noto Serif SC', serif;
-            background: linear-gradient(135deg, #000428 0%, #0a192f 100%);
+            background: linear-gradient(135deg, #0a1a2a 0%, #152c42 100%);
             min-height: 100vh;
-            padding: 60px 20px;
-            color: #e0f7fa;
-            line-height: 1.8;
-            background-image: 
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 10px),
-                radial-gradient(white, rgba(255,255,255,.05) 1px, transparent 5px);
-            background-size: 100px 100px, 50px 50px;
-            background-position: 0 0, 30px 30px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-            padding: 40px 0;
-        }
-        
-        h1 {
-            font-size: 4.5rem;
-            color: #4fc3f7;
-            margin-bottom: 15px;
-            letter-spacing: 3px;
-            text-shadow: 0 0 15px rgba(79, 195, 247, 0.7);
-            position: relative;
-            display: inline-block;
-        }
-        
-        h1:after {
-            content: "A Brief History of Time";
-            position: absolute;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.2rem;
-            color: #81d4fa;
-            letter-spacing: 4px;
-            opacity: 0.8;
-        }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            color: #b3e5fc;
-            max-width: 800px;
-            margin: 40px auto 0;
-            line-height: 1.9;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        
-        .author-info {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .author-card {
-            background: rgba(2, 27, 58, 0.6);
-            padding: 15px 30px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border: 1px solid rgba(79, 195, 247, 0.3);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-        
-        .author-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #0a192f, #4fc3f7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-        }
-        
-        .content-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
-            margin-top: 30px;
-        }
-        
-        .cosmic-card {
-            background: linear-gradient(145deg, rgba(10, 25, 47, 0.8), rgba(2, 27, 58, 0.9));
-            border-radius: 20px;
-            padding: 40px 35px;
-            display: flex;
-            flex-direction: column;
+            color: #e0f0ff;
+            overflow-x: hidden;
+            padding: 20px;
             position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            border: 1px solid rgba(79, 195, 247, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transform: translateY(30px);
-            opacity: 0;
         }
         
-        .cosmic-card:before {
-            content: "";
+        /* 冰山动态背景 */
+        .iceberg-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #4fc3f7, #01579b);
+            height: 100%;
+            background: 
+                linear-gradient(to bottom, rgba(10, 30, 50, 0.9), transparent),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="rgba(200, 225, 255, 0.1)" d="M50,0 C70,20 80,40 100,50 C120,40 130,20 150,0 L150,200 L50,200 Z"/></svg>');
+            background-size: 400px 400px;
+            animation: icebergFloat 60s linear infinite;
+            z-index: 0;
+            opacity: 0.4;
         }
         
-        .cosmic-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(79, 195, 247, 0.3);
+        @keyframes icebergFloat {
+            0% { background-position: 0 0; }
+            100% { background-position: 2000px 0; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header {
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 4.5rem;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #a8d0ff, #e0f0ff, #a8d0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(168, 208, 255, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #3a7ca5, transparent);
+        }
+        
+        .header p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 35px auto 0;
+            line-height: 1.8;
+            color: #b0d0f0;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            margin: 40px 0;
+            color: #3a7ca5;
+            padding: 20px;
+            position: relative;
+            display: inline-block;
+            border-left: 3px solid #3a7ca5;
+            max-width: 700px;
+            background: rgba(25, 50, 75, 0.3);
+            border-radius: 0 10px 10px 0;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 35px;
+            perspective: 1500px;
+        }
+        
+        .card {
+            width: 350px;
+            height: 450px;
+            background: rgba(25, 45, 70, 0.85);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            cursor: pointer;
+            border: 1px solid #3a7ca5;
+            backdrop-filter: blur(5px);
+        }
+        
+        .card:hover {
+            transform: translateY(-25px) rotateX(8deg);
+            box-shadow: 0 25px 45px rgba(58, 124, 165, 0.4);
         }
         
         .card-number {
             position: absolute;
-            top: 15px;
+            top: 20px;
             right: 20px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #4fc3f7, #01579b);
-            color: #0a192f;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 2.8rem;
             font-weight: bold;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            color: rgba(58, 124, 165, 0.3);
+            z-index: 1;
+        }
+        
+        .card-icon {
+            font-size: 3.8rem;
+            color: #a8d0ff;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(168, 208, 255, 0.4);
+            transition: all 0.4s;
+        }
+        
+        .card:hover .card-icon {
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(168, 208, 255, 0.7);
         }
         
         .card-title {
-            font-size: 1.8rem;
-            color: #4fc3f7;
+            font-size: 1.9rem;
             margin-bottom: 25px;
+            color: #e0f0ff;
+            position: relative;
             padding-bottom: 15px;
-            border-bottom: 2px solid rgba(79, 195, 247, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            letter-spacing: 2px;
         }
         
-        .card-title i {
-            font-size: 1.8rem;
+        .card-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #3a7ca5, transparent);
+            transition: all 0.4s;
+        }
+        
+        .card:hover .card-title::after {
+            width: 120px;
+            background: linear-gradient(to right, transparent, #a8d0ff, transparent);
         }
         
         .card-content {
             font-size: 1.15rem;
-            color: #e1f5fe;
-            flex-grow: 1;
-            line-height: 1.9;
-            text-align: justify;
+            line-height: 1.8;
+            text-align: left;
+            color: #b0d0f0;
+            height: 190px;
+            overflow: hidden;
+            position: relative;
         }
         
-        .hawking-quote {
-            margin: 20px 0;
+        .card-content::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(25, 45, 70, 0), rgba(25, 45, 70, 0.9));
+        }
+        
+        .card-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             padding: 20px;
-            background: rgba(2, 27, 58, 0.5);
-            border-left: 3px solid #4fc3f7;
+            background: rgba(58, 124, 165, 0.2);
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(58, 124, 165, 0.3);
+        }
+        
+        .quote-text {
             font-style: italic;
-            color: #81d4fa;
-            border-radius: 0 8px 8px 0;
-            position: relative;
+            font-weight: bold;
+            color: #a8d0ff;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
         }
         
-        .theme-tag {
-            display: inline-block;
-            padding: 7px 18px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            margin-top: 20px;
-            background: rgba(1, 87, 155, 0.3);
-            color: #81d4fa;
-            border: 1px solid rgba(79, 195, 247, 0.3);
+        .watermark {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 5rem;
+            opacity: 0.03;
+            color: #e0f0ff;
+            z-index: 0;
+            transform: rotate(-25deg);
+            font-family: 'Times New Roman', serif;
         }
         
-        .physics-tag {
-            background: rgba(121, 134, 203, 0.2);
-            color: #b388ff;
+        .nav-dots {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
         }
         
-        .cosmic-tag {
-            background: rgba(240, 98, 146, 0.2);
-            color: #ff80ab;
+        .dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #152c42;
+            border: 2px solid #3a7ca5;
+            cursor: pointer;
+            transition: all 0.3s;
         }
         
-        .footer-note {
-            margin-top: 80px;
-            padding: 40px;
-            background: rgba(10, 25, 47, 0.7);
-            border-radius: 20px;
-            text-align: center;
+        .dot.active {
+            background: #a8d0ff;
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(168, 208, 255, 0.5);
+        }
+        
+        .footer {
+            margin-top: 70px;
+            padding: 25px;
             font-size: 1.1rem;
-            color: #b3e5fc;
-            line-height: 1.9;
-            border: 1px solid rgba(79, 195, 247, 0.2);
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: #7aa0c0;
+            border-top: 1px solid rgba(58, 124, 165, 0.3);
+            max-width: 800px;
+            margin: 70px auto 0;
+            letter-spacing: 1px;
         }
         
-        .footer-title {
-            font-size: 1.8rem;
-            color: #4fc3f7;
-            margin-bottom: 25px;
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px) rotate(3deg); }
+            to { opacity: 1; transform: translateY(0) rotate(0); }
+        }
+        
+        .card {
+            animation: fadeIn 0.7s forwards;
+            opacity: 0;
+        }
+        
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+        .card:nth-child(7) { animation-delay: 0.7s; }
+        .card:nth-child(8) { animation-delay: 0.8s; }
+        .card:nth-child(9) { animation-delay: 0.9s; }
+        .card:nth-child(10) { animation-delay: 1s; }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .cards-container {
+                gap: 25px;
+            }
+            
+            .card {
+                width: 320px;
+                height: 430px;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .cards-container {
+                gap: 20px;
+            }
+            
+            .card {
+                width: 300px;
+                height: 420px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .card {
+                width: calc(50% - 20px);
+                height: 450px;
+            }
+            
+            .header h1 {
+                font-size: 3.8rem;
+            }
         }
         
         @media (max-width: 768px) {
-            h1 {
+            .card {
+                width: 100%;
+                max-width: 450px;
+                height: 410px;
+            }
+            
+            .header h1 {
                 font-size: 3rem;
             }
             
-            .subtitle {
+            .header p {
                 font-size: 1.2rem;
             }
             
-            .cosmic-card {
-                padding: 30px 25px;
+            .quote {
+                font-size: 1.15rem;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
             }
             
-            .footer-note {
-                padding: 30px 20px;
+            .card {
+                height: 430px;
+            }
+            
+            .card-title {
+                font-size: 1.7rem;
+            }
+            
+            .quote {
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
+    <div class="iceberg-bg"></div>
+    
     <div class="container">
-        <header>
-            <h1>时间简史</h1>
-            <p class="subtitle">霍金带领我们踏上的宇宙探索之旅，从大爆炸到黑洞，从不确定原理到时间箭头，揭示时空本质的宏伟史诗</p>
-            
-            <div class="author-info">
-                <div class="author-card">
-                    <div class="author-img"><i class="fas fa-user-astronaut"></i></div>
-                    <div>
-                        <div>斯蒂芬·霍金</div>
-                        <div style="font-size:0.9rem;color:#81d4fa">1942-2018 · 英国理论物理学家</div>
-                    </div>
-                </div>
-                <div class="author-card">
-                    <div class="author-img"><i class="fas fa-book"></i></div>
-                    <div>
-                        <div>全球销量超2500万册</div>
-                        <div style="font-size:0.9rem;color:#81d4fa">被译为40多种语言</div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        
-        <div class="content-container">
-            <!-- 卡片1 -->
-            <div class="cosmic-card">
-                <div class="card-number">1</div>
-                <h2 class="card-title"><i class="fas fa-bang"></i>大爆炸奇点</h2>
-                <div class="card-content">
-                    <p>宇宙起源于密度无穷大的时空奇点，约138亿年前的大爆炸创造了时间、空间和物质，开启宇宙演化历程。</p>
-                    <div class="hawking-quote">
-                        "宇宙是不断膨胀着的，它在最初应该收缩为一点，这一时刻被称为宇宙大爆炸时刻。宇宙在这一点的密度无穷大，这一点即为数学上所称的奇点。"
-                    </div>
-                    <span class="theme-tag cosmic-tag">宇宙起源</span>
-                </div>
-            </div>
-            
-            <!-- 卡片2 -->
-            <div class="cosmic-card">
-                <div class="card-number">2</div>
-                <h2 class="card-title"><i class="fas fa-hourglass-half"></i>相对论时空观</h2>
-                <div class="card-content">
-                    <p>爱因斯坦相对论揭示时空是相对的物理量，物体运动速度接近光速时会产生时间膨胀效应，引力场也会弯曲时空。</p>
-                    <div class="hawking-quote">
-                        "在一个无限的宇宙中，每一点都可以认为是中心，因为在它的每一边都有无限颗恒星。"
-                    </div>
-                    <span class="theme-tag physics-tag">物理革命</span>
-                </div>
-            </div>
-            
-            <!-- 卡片3 -->
-            <div class="cosmic-card">
-                <div class="card-number">3</div>
-                <h2 class="card-title"><i class="fas fa-expand-arrows-alt"></i>膨胀的宇宙</h2>
-                <div class="card-content">
-                    <p>弗里德曼宇宙模型表明宇宙处于膨胀状态，星系彼此远离，暗能量推动宇宙加速膨胀。</p>
-                    <div class="hawking-quote">
-                        "弗利德曼指出，仅仅从两个观念出发（宇宙均匀且各向同性），我们就应该预料宇宙不是静态的。"
-                    </div>
-                    <span class="theme-tag cosmic-tag">宇宙演化</span>
-                </div>
-            </div>
-            
-            <!-- 卡片4 -->
-            <div class="cosmic-card">
-                <div class="card-number">4</div>
-                <h2 class="card-title"><i class="fas fa-atom"></i>不确定性原理</h2>
-                <div class="card-content">
-                    <p>海森堡原理揭示粒子位置与动量无法同时精确测量，量子世界具有本质不确定性。</p>
-                    <div class="hawking-quote">
-                        "当爱因斯坦说到'上帝不掷骰子'的时候，他错了。鉴于黑洞给予我们的暗示，上帝不仅掷骰子，而且往往将骰子掷到我们看不见的地方以迷惑我们。"
-                    </div>
-                    <span class="theme-tag physics-tag">量子力学</span>
-                </div>
-            </div>
-            
-            <!-- 卡片5 -->
-            <div class="cosmic-card">
-                <div class="card-number">5</div>
-                <h2 class="card-title"><i class="fas fa-shapes"></i>粒子与自然力</h2>
-                <div class="card-content">
-                    <p>宇宙由基本粒子构成，四种基本力（引力、电磁力、强核力、弱核力）支配着物质运动。</p>
-                    <div class="hawking-quote">
-                        "根据量子力学，粒子可以同时处于多个位置或状态，直到被观察时才确定。"
-                    </div>
-                    <span class="theme-tag">物质本质</span>
-                </div>
-            </div>
-            
-            <!-- 卡片6 -->
-            <div class="cosmic-card">
-                <div class="card-number">6</div>
-                <h2 class="card-title"><i class="fas fa-circle-notch"></i>黑洞之谜</h2>
-                <div class="card-content">
-                    <p>大质量恒星坍缩形成黑洞，其引力强大到连光都无法逃脱，挑战经典物理学理论。</p>
-                    <div class="hawking-quote">
-                        "黑洞表面引力很强，时间会在此终止。"
-                    </div>
-                    <span class="theme-tag cosmic-tag">时空边界</span>
-                </div>
-            </div>
-            
-            <!-- 卡片7 -->
-            <div class="cosmic-card">
-                <div class="card-number">7</div>
-                <h2 class="card-title"><i class="fas fa-radiation"></i>霍金辐射</h2>
-                <div class="card-content">
-                    <p>黑洞并非完全"黑"的，量子效应导致黑洞边缘会辐射粒子，这一发现革新了对黑洞的认知。</p>
-                    <div class="hawking-quote">
-                        "黑洞不是这么黑的——量子效应使黑洞像热体一样辐射和散发能量"
-                    </div>
-                    <span class="theme-tag physics-tag">量子引力</span>
-                </div>
-            </div>
-            
-            <!-- 卡片8 -->
-            <div class="cosmic-card">
-                <div class="card-number">8</div>
-                <h2 class="card-title"><i class="fas fa-forward"></i>时间箭头</h2>
-                <div class="card-content">
-                    <p>时间单向流动源于热力学第二定律，宇宙膨胀导致无序度增加，形成时间方向性。</p>
-                    <div class="hawking-quote">
-                        "宇宙收缩相的条件不适合于智慧人类的存在，只有在宇宙膨胀相中才有适合智慧生命的条件。"
-                    </div>
-                    <span class="theme-tag">时间本质</span>
-                </div>
-            </div>
-            
-            <!-- 卡片9 -->
-            <div class="cosmic-card">
-                <div class="card-number">9</div>
-                <h2 class="card-title"><i class="fas fa-worm"></i>虫洞与时间旅行</h2>
-                <div class="card-content">
-                    <p>爱因斯坦方程允许虫洞存在，理论上可作为时空捷径，但量子效应可能阻止宏观时间旅行。</p>
-                    <div class="hawking-quote">
-                        "虫洞的正式名称应叫爱因斯坦-罗森桥，是宇宙中理论上存在的跨越亿万年的负曲率空间"
-                    </div>
-                    <span class="theme-tag cosmic-tag">时空结构</span>
-                </div>
-            </div>
-            
-            <!-- 卡片10 -->
-            <div class="cosmic-card">
-                <div class="card-number">10</div>
-                <h2 class="card-title"><i class="fas fa-infinity"></i>统一理论</h2>
-                <div class="card-content">
-                    <p>物理学终极目标是建立统一四种基本力的完整理论，弦理论等尝试将相对论与量子力学结合。</p>
-                    <div class="hawking-quote">
-                        "人类在寻求建立一个适用于宇宙中每一事件的、完整的、协调的统一理论，在这理论中不需要选取特定的常数去符合事实。"
-                    </div>
-                    <span class="theme-tag physics-tag">终极追求</span>
-                </div>
+        <div class="header">
+            <h1>泰坦尼克号</h1>
+            <p>詹姆斯·卡梅隆执导的史诗级爱情灾难片，以1912年泰坦尼克号沉没事件为背景，讲述跨越阶级的生死之恋</p>
+            <div class="quote">
+                "赢得船票是我一生最幸运的事，让我认识了你... 答应我活下去，无论多么绝望"
             </div>
         </div>
         
-        <div class="footer-note">
-            <div class="footer-title">时空沉思录</div>
-            <p>《时间简史》以宇宙的宏观叙事重构人类认知：从牛顿的绝对时空到爱因斯坦的弯曲时空，从静态宇宙到138亿年膨胀史。霍金揭示物理定律如何支配宇宙演化，而量子不确定性又如何在微观尺度颠覆经典决定论。</p>
-            <p>书中两大革命性突破——黑洞辐射与无边界宇宙模型——彻底改变了人类对时空本质的理解。当霍金说"宇宙不需要边界条件"时，他不仅否定了造物主的第一推动，更将宇宙创生纳入科学解释范畴，完成了从神学叙事到物理叙事的范式转换。</p>
-            <p>这部巨著最深刻的启示在于：人类作为"普通恒星次要行星上的高级猿类"，竟能通过理性探索触及时空起源之谜。这种有限存在者追求无限真理的勇气，正是科学精神最壮丽的诗篇。</p>
+        <div class="cards-container">
+            <!-- 卡片1：梦幻启航 -->
+            <div class="card">
+                <div class="card-number">01</div>
+                <div class="card-icon"><i class="fas fa-ship"></i></div>
+                <h2 class="card-title">梦幻启航</h2>
+                <div class="card-content">
+                    <p>1912年4月10日，号称"永不沉没"的泰坦尼克号从英国南安普顿首航纽约。船上载有2224人，包含头等舱贵族、三等舱移民及船员[6,8](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"她是梦想之船，却承载着命运的无常"</div>
+                </div>
+                <div class="watermark">RMS</div>
+            </div>
+            
+            <!-- 卡片2：命运相遇 -->
+            <div class="card">
+                <div class="card-number">02</div>
+                <div class="card-icon"><i class="fas fa-heart"></i></div>
+                <h2 class="card-title">命运相遇</h2>
+                <div class="card-content">
+                    <p>贵族小姐罗丝厌倦虚伪的贵族生活欲跳海自尽，被赢得船票的穷画家杰克救下。两人在甲板初遇，命运的齿轮开始转动[2,3](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"你跳，我就跳"</div>
+                </div>
+                <div class="watermark">❤</div>
+            </div>
+            
+            <!-- 卡片3：阶层穿越 -->
+            <div class="card">
+                <div class="card-number">03</div>
+                <div class="card-icon"><i class="fas fa-gem"></i></div>
+                <h2 class="card-title">阶层穿越</h2>
+                <div class="card-content">
+                    <p>杰克带罗丝参加三等舱舞会，教她吐口水，在船头迎风展臂。罗丝戴上"海洋之心"让杰克画像，两人在货舱汽车中结合[1,3](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"外表看我是贵族小姐，骨子里我很反叛"</div>
+                </div>
+                <div class="watermark">⚖</div>
+            </div>
+            
+            <!-- 卡片4：冰山撞击 -->
+            <div class="card">
+                <div class="card-number">04</div>
+                <div class="card-icon"><i class="fas fa-icicles"></i></div>
+                <h2 class="card-title">冰山撞击</h2>
+                <div class="card-content">
+                    <p>4月14日23:40，瞭望员发现冰山时已避让不及，船体右侧被撕裂，五个水密舱进水。号称永不沉没的巨轮将在两小时内沉没[6,7](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"寂静的夜海，死亡悄然而至"</div>
+                </div>
+                <div class="watermark">❄</div>
+            </div>
+            
+            <!-- 卡片5：生死抉择 -->
+            <div class="card">
+                <div class="card-number">05</div>
+                <div class="card-icon"><i class="fas fa-life-ring"></i></div>
+                <h2 class="card-title">生死抉择</h2>
+                <div class="card-content">
+                    <p>救生艇仅够半数人使用。船长下令"妇女儿童优先"，乐队奏乐安抚乘客。罗丝放弃逃生机会，返回船舱救出被诬陷的杰克[1,5](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"女士和儿童先上船！"</div>
+                </div>
+                <div class="watermark">⚡</div>
+            </div>
+            
+            <!-- 卡片6：永不分离 -->
+            <div class="card">
+                <div class="card-number">06</div>
+                <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h2 class="card-title">永不分离</h2>
+                <div class="card-content">
+                    <p>船尾垂直竖起时，杰克带罗丝返回船头。在冰冷海水中，杰克将罗丝推上漂浮门板，自己浸泡在刺骨海水中守护爱人[3,5](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"答应我活下去，生很多孩子..."</div>
+                </div>
+                <div class="watermark">∞</div>
+            </div>
+            
+            <!-- 卡片7：我心永恒 -->
+            <div class="card">
+                <div class="card-number">07</div>
+                <div class="card-icon"><i class="fas fa-music"></i></div>
+                <h2 class="card-title">我心永恒</h2>
+                <div class="card-content">
+                    <p>杰克沉入深海，罗丝被救生艇救起。84年后，年迈的罗丝将"海洋之心"投入大西洋，在睡梦中重回泰坦尼克号的大楼梯与杰克相拥[1,4](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"爱在生死间获得永恒"</div>
+                </div>
+                <div class="watermark">♪</div>
+            </div>
+            
+            <!-- 卡片8：人性光辉 -->
+            <div class="card">
+                <div class="card-number">08</div>
+                <div class="card-icon"><i class="fas fa-users"></i></div>
+                <h2 class="card-title">人性光辉</h2>
+                <div class="card-content">
+                    <p>设计师安德鲁斯校正时钟等待死亡；施特劳斯夫妇相拥而逝；母亲为孩子讲睡前故事；乐队奏响《Nearer My God to Thee[](@replace=10002)》[1,5](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"绅士的从容比生命更贵重"</div>
+                </div>
+                <div class="watermark">✨</div>
+            </div>
+            
+            <!-- 卡片9：影史丰碑 -->
+            <div class="card">
+                <div class="card-number">09</div>
+                <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                <h2 class="card-title">影史丰碑</h2>
+                <div class="card-content">
+                    <p>影片获11项奥斯卡奖，全球票房22亿美元。1:1建造的船体模型、数字海洋与灾难特效，重新定义电影工业标准[1,9](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"卡梅隆创造了无法复制的奇迹"</div>
+                </div>
+                <div class="watermark">🏆</div>
+            </div>
+            
+            <!-- 卡片10：永恒回响 -->
+            <div class="card">
+                <div class="card-number">10</div>
+                <div class="card-icon"><i class="fas fa-infinity"></i></div>
+                <h2 class="card-title">永恒回响</h2>
+                <div class="card-content">
+                    <p>2012年3D重映再掀狂潮，2023年沉船3D扫描图公布。罗丝床头的照片墙印证了她对杰克的承诺：像男人一样骑马、当演员、组建家庭[7,10](@ref)。</p>
+                </div>
+                <div class="card-footer">
+                    <div class="quote-text">"真正的自由是活出承诺的生命"</div>
+                </div>
+                <div class="watermark">♾</div>
+            </div>
+        </div>
+        
+        <div class="nav-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <div class="footer">
+            <p>《泰坦尼克号》1997年12月19日首映 · 第70届奥斯卡最佳影片 · 全球票房22亿美元 · 1517人随真实巨轮沉没</p>
         </div>
     </div>
-
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.cosmic-card');
-            const constellations = ['&#10025;', '&#10026;', '&#10032;', '&#10035;', '&#10036;'];
-            
-            // 卡片入场动画
-            setTimeout(() => {
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                        
-                        // 添加星座装饰
-                        const star1 = document.createElement('div');
-                        star1.innerHTML = constellations[Math.floor(Math.random()*constellations.length)];
-                        star1.style.position = 'absolute';
-                        star1.style.top = Math.random()*80 + 10 + '%';
-                        star1.style.left = Math.random()*80 + 10 + '%';
-                        star1.style.fontSize = '24px';
-                        star1.style.opacity = '0.3';
-                        star1.style.color = '#4fc3f7';
-                        star1.style.zIndex = '0';
-                        card.appendChild(star1);
-                        
-                    }, 200 + index * 150);
-                });
-            }, 500);
-            
-            // 卡片悬停效果
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px)';
-                    this.style.boxShadow = '0 15px 40px rgba(79, 195, 247, 0.4)';
-                });
+        // 卡片3D悬停效果
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
                 
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const angleY = (x - centerX) / 20;
+                const angleX = (centerY - y) / 20;
+                
+                card.style.transform = `perspective(1500px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-25px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1500px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+        
+        // 轮播导航
+        const dots = document.querySelectorAll('.dot');
+        const cardContainer = document.querySelector('.cards-container');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                
+                cardContainer.scrollTo({
+                    left: index * (cardContainer.scrollWidth / dots.length),
+                    behavior: 'smooth'
                 });
             });
         });
+        
+        // 自动轮播
+        let currentSlide = 0;
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % dots.length;
+            dots.forEach((d, i) => {
+                d.classList.toggle('active', i === currentSlide);
+            });
+            
+            cardContainer.scrollTo({
+                left: currentSlide * (cardContainer.scrollWidth / dots.length),
+                behavior: 'smooth'
+            });
+        }
+        
+        setInterval(nextSlide, 10000);
     </script>
 </body>
 </html>
